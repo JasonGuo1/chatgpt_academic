@@ -94,7 +94,7 @@ def 总结word文档(txt, top_p, temperature, chatbot, history, systemPromptTxt,
     except:
         report_execption(chatbot, history,
                          a=f"解析项目: {txt}",
-                         b=f"导入软件依赖失败。使用该模块需要额外依赖，安装方法```pip install --upgrade python-docx pywin32```。")
+                         b=f"导入软件依赖失败。使用该模块需要额外依赖，安装方法```pip install --upgrade python-docx pywin32```。请注意Linux端无法读取 .doc，只能读取 .docx格式")
         yield chatbot, history, '正常'
         return
 

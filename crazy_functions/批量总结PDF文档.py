@@ -44,7 +44,8 @@ def 解析PDF(file_manifest, project_folder, top_p, temperature, chatbot, histor
         gpt_say = yield from predict_no_ui_but_counting_down(i_say, i_say, chatbot, top_p, temperature, history=history)   # 带超时倒计时
 
         chatbot[-1] = (i_say, gpt_say)
-        history.append(i_say); history.append(gpt_say)
+        history.append(i_say)
+        history.append(gpt_say)
         yield chatbot, history, msg
         res = write_results_to_file(history)
         chatbot.append(("完成了吗？", res))
